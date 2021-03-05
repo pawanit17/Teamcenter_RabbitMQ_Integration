@@ -2,6 +2,8 @@
 
 RabbitMQ is a messaging service that is quite popular. It also supports clustering for fault tolerance and scalability.
 
+Has centralized / broker architecture unlike Kafka, which is decentralized.
+
 Messaging Protocols that are popular:
 
 STOMP - Simple Text Oriented Messaging Protocol
@@ -18,12 +20,26 @@ AMQP - Advanced Message Queueing Protocol
 
 ![image](RabbitMQ_Overview.png)
 
-
 # Usecases
 
 - Real time feed of constantly updating information
 - Want to connect different softwares together
 - Message delivery after the destination comes online etc..
+
+# Core
+Main participants in RabbitMQ
+- Producer
+- Exchanges - Messages from Producer are sent to Exchanges. Takes the incoming message, applies the routing algorithm ( bindings ) and sends them to one or more queues.
+Default, Fanout, Topic, Headers are the exchange types.
+- Routing
+- Queue - Consumers only know about the Queues. Bindings are done from Exchange to Queue. Durable vs Non-Durable queues. Exclusive and Auto-Delete options.
+- Topics - Are simply the subject part of the messages.
+- Bindings - Queues are bound to exchanges using Bindings. These are responsbile for routing messages. May have an optional routing key attribute used by some exchange types.
+- Consumer
+
+In RabbitMQ, messages for which there are no consumers can be configured to be dropped or returned to the producer.
+
+Exchange -----> Bindings ------> Queues
 
 # Launching
 
