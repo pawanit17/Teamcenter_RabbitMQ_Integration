@@ -1,3 +1,15 @@
+# RabbitMQ
+
+RabbitMQ is a messaging service that is quite popular. RabbitMQ could be launched with the help of Docker. Use the below command to spawn a Docker container containing RabbitMQ.
+
+```docker run -d --name some-rabbit -p 5672:5672 -p 5673:5673 -p 15672:15672 rabbitmq:3-management```
+
+With this, the portal is accessible via http://localhost:15672/
+
+
+
+
+
 # Teamcenter_RabbitMQ_Integration
 Here, I integrate Teamcenter ( a datasource ) with RabbitMQ ( a messaging queue ).
 
