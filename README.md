@@ -1,6 +1,6 @@
 # RabbitMQ
 
-RabbitMQ is a messaging service that is quite popular.
+RabbitMQ is a messaging service that is quite popular. It also supports clustering for fault tolerance and scalability.
 
 Messaging Protocols that are popular:
 
@@ -16,6 +16,9 @@ MQTT - Message Queue Telemetry Transport
 AMQP - Advanced Message Queueing Protocol
 - Routing, security with publish-subscribe.
 
+![image](RabbitMQ_Overview.png)
+
+
 # Usecases
 
 - Real time feed of constantly updating information
@@ -30,7 +33,7 @@ RabbitMQ could be launched with the help of Docker. Use the below command to spa
 
 With this, the portal is accessible via http://localhost:15672/
 
-More one Docker here: https://github.com/pawanit17/learn_docker
+More one Docker [here](https://github.com/pawanit17/learn_docker).
 
 # Teamcenter_RabbitMQ_Integration
 
