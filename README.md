@@ -41,6 +41,45 @@ In RabbitMQ, messages for which there are no consumers can be configured to be d
 
 Exchange -----> Bindings ------> Queues
 
+# RabbitTemplate
+
+We can create a SpringBoot project from https://start.spring.io/ with dependency as --Spring for RabbitMQ--. 
+
+```
+<dependency>
+  <groupId>org.springframework.boot</groupId>
+	<artifactId>spring-boot-starter-amqp</artifactId>
+</dependency>
+```
+
+With this, RabbitTemplate class would be usable. Sample code is shown below:
+
+```
+package io.bubblesort.rabbitmq;
+
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class RabbitmqApplication implements CommandLineRunner {
+
+	@Autowired
+	private RabbitTemplate rabbitTemplate;
+
+	public static void main(String[] args) {
+		SpringApplication.run(RabbitmqApplication.class, args);
+	}
+
+	@Override
+	public void run(String... args) throws Exception {
+		rabbitTemplate.convertAndSend("TestExchange", "testRouting", "Hello from our first message again!.");
+	}
+}
+```
+
 # Launching
 
 RabbitMQ could be launched with the help of Docker. Use the below command to spawn a Docker container containing RabbitMQ.
