@@ -79,6 +79,10 @@ public class RabbitmqApplication implements CommandLineRunner {
 	}
 }
 ```
+Note that we can even send a Java object as long as that object's class extends Serializeable interface.
+
+Sample Message Received at Queue:
+![image](https://user-images.githubusercontent.com/42272776/110161745-cdf81c80-7e13-11eb-81c5-9c15bf47a790.png)
 
 # Launching
 
